@@ -14,20 +14,20 @@ public class Worm_Head : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-
-        if (Input.GetKey(KeyCode.W))
+        // Player Control
+        float v = Input.GetAxis("Vertical");
+        float h = Input.GetAxis("Horizontal");
+        if (v > 0f)
         {
-            transform.Translate(Vector3.up * speed * Time.deltaTime);
+            transform.Translate(v * Vector3.up * speed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.A))
+        if (h < 0f)
         {
-            transform.Rotate(Vector3.forward * -turn_rate * Time.deltaTime);
+            transform.Rotate(-h * Vector3.forward * -turn_rate * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.D))
+        else if (h > 0f)
         {
-            transform.Rotate(Vector3.forward * turn_rate * Time.deltaTime);
+            transform.Rotate(h * Vector3.forward * turn_rate * Time.deltaTime);
         }
-
     }
 }
