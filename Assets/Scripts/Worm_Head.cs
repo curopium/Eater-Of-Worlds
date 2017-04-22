@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Worm_Head : MonoBehaviour {
+public class Worm_Head : MonoBehaviour, Damagable {
 
     public float acceleration;
     public float turn_rate;
     public float maxSpeed;
     public float currentSpeed;
+    public int health;
 
 	// Use this for initialization
 	void Start () {
@@ -41,4 +42,20 @@ public class Worm_Head : MonoBehaviour {
             transform.Rotate(h * Vector3.forward * turn_rate * Time.deltaTime);
         }
     }
+
+    public void damage(int dmg)
+    {
+        health -= dmg;
+    }
+
+    public void heal(int healAmount)
+    {
+        health += healAmount;
+    }
+
+    public bool isDead()
+    {
+        return health <= 0;
+    }
+
 }
