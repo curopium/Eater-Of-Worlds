@@ -150,22 +150,22 @@ Prefab:
     - target: {fileID: 224491553837846586, guid: 36f037210167cae4c9b1f076a698262d,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224170624617326990, guid: 36f037210167cae4c9b1f076a698262d,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224403432915065236, guid: 36f037210167cae4c9b1f076a698262d,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224412880294523822, guid: 36f037210167cae4c9b1f076a698262d,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36f037210167cae4c9b1f076a698262d, type: 2}
@@ -185,6 +185,38 @@ GameObject:
   m_PrefabParentObject: {fileID: 1273407581177928, guid: 36f037210167cae4c9b1f076a698262d,
     type: 2}
   m_PrefabInternal: {fileID: 13134344}
+--- !u!1 &599289663 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1610676806570768, guid: 7fcea10108711dd468e90e00c44a4ace,
+    type: 2}
+  m_PrefabInternal: {fileID: 1084172499}
+--- !u!60 &599289667
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 599289663}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.5}
+      - {x: 0.43301272, y: -0.24999994}
+      - {x: -0.4330127, y: -0.25000003}
 --- !u!1001 &700305202
 Prefab:
   m_ObjectHideFlags: 0
@@ -417,6 +449,11 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 567589913}
+    - target: {fileID: 114302645814664004, guid: 7fcea10108711dd468e90e00c44a4ace,
+        type: 2}
+      propertyPath: foodValue
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7fcea10108711dd468e90e00c44a4ace, type: 2}
   m_IsPrefabParent: 0
@@ -565,6 +602,11 @@ Prefab:
     - target: {fileID: 4348084270482468, guid: 5e3a9bd0564b72745add4bd1e9f89e1d, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114098754069723304, guid: 5e3a9bd0564b72745add4bd1e9f89e1d,
+        type: 2}
+      propertyPath: lifeTime
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e3a9bd0564b72745add4bd1e9f89e1d, type: 2}
