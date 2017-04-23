@@ -13,6 +13,7 @@ public class SpaceShip : MonoBehaviour {
     public float fireRange;
     public float minFavouredDistance;
     public float maxFavouredDistance;
+    public float foodValue;
     private float nextFire;
     private float distance;
 
@@ -57,5 +58,17 @@ public class SpaceShip : MonoBehaviour {
     {
         GameObject clone = Instantiate(projectile, transform.position, transform.rotation);
         clone.SetActive(true);
+    }
+
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Worm_Head worm;
+        if (worm = col.gameObject.GetComponent<Worm_Head>())
+        {
+            worm.heal(foodValue);
+        }
+
+        Destroy(gameObject);
     }
 }
