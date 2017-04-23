@@ -752,7 +752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   broken_piece: {fileID: 1358896511}
   number_pieces: 5
-  hardness: 3
+  hardness: 6
 --- !u!212 &788094955
 SpriteRenderer:
   m_ObjectHideFlags: 0

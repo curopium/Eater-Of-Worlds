@@ -383,7 +383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   broken_piece: {fileID: 1994250534}
   number_pieces: 5
-  hardness: 3
+  hardness: 6
 --- !u!58 &468365526
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1372,7 +1372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 0.1
-  turn_rate: -180
+  turn_rate: -270
   maxSpeed: 8
   currentSpeed: 0
   hunger: 100
