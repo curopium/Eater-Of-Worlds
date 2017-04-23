@@ -14,8 +14,6 @@ public class Worm_Segment : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (parent == null) return;
-
-
         
         //translation
         //http://answers.unity3d.com/questions/390009/3d-snake-classical-movement-1.html
