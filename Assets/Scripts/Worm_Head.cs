@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Worm_Head : MonoBehaviour {
+public class Worm_Head : MonoBehaviour, Damagable {
 
-    public float speed;
+    public float acceleration;
     public float turn_rate;
+    public float maxSpeed;
+    public float currentSpeed;
     public float hunger;
     Vector3 prev_pos;
     Vector3 velocity;
-    float current_speed;
+    float current_turning_speed;
     UnityEngine.UI.Slider hunger_slider;
     UnityEngine.UI.Slider speed_slider;
 
     // Use this for initialization
     void Start () {
+		currentSpeed = 0f;
         prev_pos = transform.position;
 
         GameObject slider = GameObject.Find("HungerSlider");
@@ -34,10 +37,19 @@ public class Worm_Head : MonoBehaviour {
         // Player Control
         float v = Input.GetAxis("Vertical");
         float h = Input.GetAxis("Horizontal");
+        // Forwards
         if (v > 0f)
         {
-            transform.Translate(v * Vector3.up * speed * Time.deltaTime);
+            currentSpeed = Mathf.Min(maxSpeed, currentSpeed + v * acceleration);
         }
+        else
+        {
+            currentSpeed = Mathf.Max(0f, currentSpeed - acceleration);
+        }
+        // Slide around in space? Space is ice? Ice Space!
+        transform.Translate(Vector3.up * currentSpeed * Time.deltaTime);
+
+        // Turning
         if (h < 0f)
         {
             transform.Rotate(-h * Vector3.forward * -turn_rate * Time.deltaTime);
@@ -50,9 +62,9 @@ public class Worm_Head : MonoBehaviour {
         Vector3 current_pos = transform.position;
 
         velocity = (current_pos - prev_pos) / Time.deltaTime;
-        current_speed = Mathf.Abs(velocity.x) + Mathf.Abs(velocity.y);
+        current_turning_speed = Mathf.Abs(velocity.x) + Mathf.Abs(velocity.y);
 
-        speed_slider.value = Mathf.Clamp(current_speed / speed, 0, 1);
+        speed_slider.value = Mathf.Clamp(current_turning_speed / maxSpeed, 0, 1);
 
         prev_pos = current_pos;
 
@@ -63,8 +75,19 @@ public class Worm_Head : MonoBehaviour {
         return velocity;
     }
 
-    public void feed(int food_value)
+    public void heal(float food_value)
     {
         hunger = hunger + food_value;
     }
+
+    public void damage(float dmg)
+    {
+        hunger -= dmg;
+    }
+
+    public bool isDead()
+    {
+        return hunger <= 0;
+    }
+
 }

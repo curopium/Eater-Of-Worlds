@@ -24,7 +24,7 @@ public class Collectible_Chunk : MonoBehaviour {
         Worm_Head worm;
         if (worm = col.gameObject.GetComponent<Worm_Head>())
         {
-            worm.feed(food_value);
+            worm.heal(food_value);
             Destroy(gameObject);
         }
     }
