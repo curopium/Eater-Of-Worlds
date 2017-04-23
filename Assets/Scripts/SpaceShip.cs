@@ -6,6 +6,7 @@ public class SpaceShip : MonoBehaviour {
 
     public GameObject projectile;
     public GameObject target;
+    public GameObject bulletSpawn;
     public int health;
     public float speed;
     public float rotation_speed;
@@ -60,7 +61,7 @@ public class SpaceShip : MonoBehaviour {
 
     void fire ()
     {
-        GameObject clone = Instantiate(projectile, transform.position, transform.rotation);
+        GameObject clone = Instantiate(projectile, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
         clone.SetActive(true);
     }
 
@@ -71,8 +72,9 @@ public class SpaceShip : MonoBehaviour {
         if (worm = col.gameObject.GetComponent<Worm_Head>())
         {
             worm.heal(foodValue);
+            Destroy(gameObject);
         }
 
-        Destroy(gameObject);
+        
     }
 }
