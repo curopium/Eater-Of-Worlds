@@ -9,11 +9,14 @@ public class Planet : MonoBehaviour {
     public int number_pieces;
     float radius;
     public float hardness;
+    public GameObject mainCamera;
+    public List<GameObject> turrets;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+        turrets = new List<GameObject>();
         radius = gameObject.GetComponent<CircleCollider2D>().radius;
-
+        mainCamera = GameObject.Find("Main Camera");
     }
 	
 	// Update is called once per frame
@@ -21,9 +24,20 @@ public class Planet : MonoBehaviour {
 		
 	}
 
+    void killTurrets()
+    {
+        for(int i = 0; i < turrets.Count; i++)
+        {
+            Destroy(turrets[i]);
+        }
+    }
+
     void Explode ()
     {
-        for(int i = 0; i < number_pieces; i++)
+        CameraBehaviour camScript = mainCamera.GetComponent<CameraBehaviour>();
+        camScript.screenShake(0.5f);
+        //killTurrets();
+        for (int i = 0; i < number_pieces; i++)
         {   
             Vector3 random_point = Random.insideUnitCircle * radius;
             random_point.x += transform.position.x;
