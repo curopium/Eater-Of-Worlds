@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour {
 
     public void playButton()
     {
-        //SceneManager.LoadScene("ryanWorldTest");
-        SceneManager.LoadScene("testland");
+        SceneManager.LoadScene("ryanWorldTest");
+        //SceneManager.LoadScene("testland");
     }
 }

@@ -454,6 +454,11 @@ Prefab:
       propertyPath: foodValue
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114302645814664004, guid: 7fcea10108711dd468e90e00c44a4ace,
+        type: 2}
+      propertyPath: outOfRange
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7fcea10108711dd468e90e00c44a4ace, type: 2}
   m_IsPrefabParent: 0

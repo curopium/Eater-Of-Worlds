@@ -13,6 +13,7 @@ public class SpaceShip : MonoBehaviour {
     public float fireRange;
     public float minFavouredDistance;
     public float maxFavouredDistance;
+    public float outOfRange;
     public float foodValue;
     private float nextFire;
     private float distance;
@@ -44,14 +45,17 @@ public class SpaceShip : MonoBehaviour {
 
     void maintainDistance()
     {
-        if (distance < minFavouredDistance)
+        if (distance < outOfRange)
         {
-            transform.Translate(speed * Vector3.up * -speed * Time.deltaTime);
-        } else if (distance > maxFavouredDistance)
-        {
-            transform.Translate(speed * Vector3.up * speed * Time.deltaTime);
+            if (distance < minFavouredDistance)
+            {
+                transform.Translate(speed * Vector3.up * -speed * Time.deltaTime);
+            }
+            else if (distance > maxFavouredDistance)
+            {
+                transform.Translate(speed * Vector3.up * speed * Time.deltaTime);
+            }
         }
-
     }
 
     void fire ()

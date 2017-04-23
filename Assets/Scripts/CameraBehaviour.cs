@@ -28,6 +28,18 @@ public class CameraBehaviour : MonoBehaviour {
         playerLoc.z = ct.position.z;
         if(hit)
             ct.position = Vector3.MoveTowards(ct.position, playerLoc, wormHead.currentSpeed * Time.deltaTime);
+        // TO TEST ScreenShake
+        if (Input.GetKey(KeyCode.Q))
+            screenShake();
+    }
+
+    public void screenShake()
+    {
+        // 0.2f is quite strong
+        float str = 0.1f;
+        float x = Random.Range(-str, str);
+        float y = Random.Range(-str, str);
+        this.transform.position += new Vector3(x, y, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
