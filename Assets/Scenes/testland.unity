@@ -1045,22 +1045,22 @@ Prefab:
     - target: {fileID: 224648481145175656, guid: ef86ea76e0ece7a4ab5ba3a115c59d9a,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224099726444133742, guid: ef86ea76e0ece7a4ab5ba3a115c59d9a,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224959421604115714, guid: ef86ea76e0ece7a4ab5ba3a115c59d9a,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224087297612179834, guid: ef86ea76e0ece7a4ab5ba3a115c59d9a,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef86ea76e0ece7a4ab5ba3a115c59d9a, type: 2}
@@ -1242,6 +1242,11 @@ Prefab:
       propertyPath: m_Size.y
       value: 5.12
       objectReference: {fileID: 0}
+    - target: {fileID: 114981777325339984, guid: 820f8671a344b784db0386a2dca4341f,
+        type: 2}
+      propertyPath: child
+      value: 
+      objectReference: {fileID: 261802012}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 820f8671a344b784db0386a2dca4341f, type: 2}
   m_IsPrefabParent: 0
@@ -2111,6 +2116,11 @@ Prefab:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114699172616050114, guid: 36f037210167cae4c9b1f076a698262d,
+        type: 2}
+      propertyPath: child
+      value: 
+      objectReference: {fileID: 390550362}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36f037210167cae4c9b1f076a698262d, type: 2}
   m_IsPrefabParent: 0
@@ -2289,6 +2299,11 @@ Prefab:
       propertyPath: m_Size.y
       value: 5.12
       objectReference: {fileID: 0}
+    - target: {fileID: 114981777325339984, guid: 820f8671a344b784db0386a2dca4341f,
+        type: 2}
+      propertyPath: child
+      value: 
+      objectReference: {fileID: 2118814619}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 820f8671a344b784db0386a2dca4341f, type: 2}
   m_IsPrefabParent: 0
@@ -2462,3 +2477,8 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+--- !u!1 &2118814619 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1211048534654572, guid: 820f8671a344b784db0386a2dca4341f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1626529123}

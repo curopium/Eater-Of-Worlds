@@ -37,6 +37,11 @@ public class GameController : MonoBehaviour {
             // Canvas stuff infront of the sprites.
             GameObject.Find("CanvasPainter").GetComponent<Canvas>().planeDistance = 1;
             gameOverPanel.SetActive(true);
+
+            GameObject.Find("FinalScore").GetComponent<Text>().text = score.ToString();
+            //GameObject.FindGameObjectWithTag("Player").SetActive(false);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Worm_Head>().detach();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Worm_Head>().die();
         }
 	}
 
