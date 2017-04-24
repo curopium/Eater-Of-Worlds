@@ -30,11 +30,6 @@ public class Worm_Head : MonoBehaviour, Damagable {
 	
 	// Update is called once per frame
 	void FixedUpdate() {
-        
-        if(hunger <0.0)
-        {
-            Debug.Log("im dead!");
-        }
 
         hunger -= Time.deltaTime;
         hunger_slider.value = Mathf.Clamp(hunger / 100, 0, 1);
@@ -94,7 +89,7 @@ public class Worm_Head : MonoBehaviour, Damagable {
 
     public bool isDead()
     {
-        return hunger <= 0;
+        return hunger <= 0f;
     }
 
 }
