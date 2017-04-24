@@ -9,6 +9,7 @@ public class Worm_Head : MonoBehaviour, Damagable {
     public float maxSpeed;
     public float currentSpeed;
     public float hunger;
+    public int eaten_objects;
     Vector3 prev_pos;
     Vector3 velocity;
     float current_turning_speed;
@@ -28,8 +29,12 @@ public class Worm_Head : MonoBehaviour, Damagable {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate() {
         
+        if(hunger <0.0)
+        {
+            Debug.Log("im dead!");
+        }
 
         hunger -= Time.deltaTime;
         hunger_slider.value = Mathf.Clamp(hunger / 100, 0, 1);
@@ -62,6 +67,7 @@ public class Worm_Head : MonoBehaviour, Damagable {
         Vector3 current_pos = transform.position;
 
         velocity = (current_pos - prev_pos) / Time.deltaTime;
+        //Debug.Log(velocity);
         current_turning_speed = Mathf.Abs(velocity.x) + Mathf.Abs(velocity.y);
 
         speed_slider.value = Mathf.Clamp(current_turning_speed / maxSpeed, 0, 1);
@@ -77,6 +83,7 @@ public class Worm_Head : MonoBehaviour, Damagable {
 
     public void heal(float food_value)
     {
+        eaten_objects = +1;
         hunger = hunger + food_value;
     }
 

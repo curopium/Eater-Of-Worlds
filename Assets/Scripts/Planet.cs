@@ -55,7 +55,8 @@ public class Planet : MonoBehaviour {
         Worm_Head worm;
         if (worm = col.gameObject.GetComponent<Worm_Head>())
         {
-            if (worm.get_velocity().x > hardness || worm.get_velocity().y > hardness)
+            float magnitude = Mathf.Abs(worm.get_velocity().x)+ Mathf.Abs(worm.get_velocity().y);
+            if (magnitude > hardness)
             {
                 Explode();
             }

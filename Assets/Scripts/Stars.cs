@@ -18,7 +18,7 @@ public class Stars : MonoBehaviour {
         {
             particles[i].position = Random.insideUnitSphere * spaceSize;
             particles[i].startSize = Random.Range(0.05f, 0.05f);
-            particles[i].startColor = new Color(0, 1, 1, 1);
+            particles[i].startColor = new Color(1, 1, 1, 1);
         }
 
         particleSystem = gameObject.GetComponent<ParticleSystem>();
