@@ -11,12 +11,14 @@ public class Planet : MonoBehaviour {
     public float hardness;
     public GameObject mainCamera;
     public List<GameObject> turrets;
+    public List<Sprite> planetSkins;
 
     // Use this for initialization
     void Start () {
         turrets = new List<GameObject>();
         radius = gameObject.GetComponent<CircleCollider2D>().radius;
         mainCamera = GameObject.Find("Main Camera");
+        this.GetComponent<SpriteRenderer>().sprite = planetSkins[Random.Range(0, planetSkins.Count)];
     }
 	
 	// Update is called once per frame
