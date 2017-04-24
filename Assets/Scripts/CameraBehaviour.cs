@@ -14,9 +14,9 @@ public class CameraBehaviour : MonoBehaviour {
         Vector3 playerLoc = worm.GetComponent<Transform>().position;
         playerLoc.z = this.transform.position.z;
         this.transform.position = playerLoc;
-        float height = 2 * Camera.main.orthographicSize - padding;
+        float height = 2 * Camera.main.orthographicSize;
         float width = Camera.main.aspect * height;
-        this.GetComponent<BoxCollider2D>().size = new Vector2(width, height);
+        this.GetComponent<CapsuleCollider2D>().size = new Vector2(width - padding, height - padding);
         hit = false;
         oldTime = 0f;
     }
