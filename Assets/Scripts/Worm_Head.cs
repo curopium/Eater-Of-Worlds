@@ -32,6 +32,23 @@ public class Worm_Head : MonoBehaviour, Damagable {
 	// Update is called once per frame
 	void FixedUpdate() {
         if (IAmDeceased) return;
+        Vector3 pos = this.GetComponent<Transform>().position;
+        if (transform.position.x > 41) {
+            this.GetComponent<Transform>().position = new Vector3(-40, pos.y, pos.z);
+            Camera.main.transform.position = new Vector3(-40, pos.y, -10);
+        }
+        if (transform.position.x < -41) {
+            this.GetComponent<Transform>().position = new Vector3(40, pos.y, pos.z);
+            Camera.main.transform.position = new Vector3(40, pos.y, -10);
+        }
+        if (transform.position.y > 31) {
+            this.GetComponent<Transform>().position = new Vector3(pos.x, -30, pos.z);
+            Camera.main.transform.position = new Vector3(pos.x, -30, -10);
+        }
+        if (transform.position.y < -31) {
+            this.GetComponent<Transform>().position = new Vector3(pos.x, 30, pos.z);
+            Camera.main.transform.position = new Vector3(pos.x, 30, -10);
+        }
 
         hunger -= Time.deltaTime;
 
