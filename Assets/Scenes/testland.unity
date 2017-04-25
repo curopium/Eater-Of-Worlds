@@ -1975,6 +1975,21 @@ Prefab:
       propertyPath: hardPlanet
       value: 
       objectReference: {fileID: 2009266039}
+    - target: {fileID: 114423457724410492, guid: 5c82077e72da1bb409362dbfaaf05a98,
+        type: 2}
+      propertyPath: minEasyPlanetTimer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114423457724410492, guid: 5c82077e72da1bb409362dbfaaf05a98,
+        type: 2}
+      propertyPath: minMediumPlanetTimer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114423457724410492, guid: 5c82077e72da1bb409362dbfaaf05a98,
+        type: 2}
+      propertyPath: minHardPlanetTimer
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c82077e72da1bb409362dbfaaf05a98, type: 2}
   m_IsPrefabParent: 0

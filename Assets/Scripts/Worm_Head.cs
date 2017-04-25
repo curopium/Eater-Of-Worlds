@@ -95,6 +95,7 @@ public class Worm_Head : MonoBehaviour, Damagable {
     public void heal(float food_value)
     {
         eaten_objects = +1;
+        GameObject.Find("GameMaster").GetComponent<GameController>().increaseScore(25);
         hunger = hunger + food_value;
     }
 

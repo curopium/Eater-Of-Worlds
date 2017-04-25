@@ -16,11 +16,14 @@ public class GameController : MonoBehaviour {
     private int planetCount;
 
     public GameObject easyPlanet;
+    public float minEasyPlanetTimer;
     public float easyPlanetTimer;
     public GameObject mediumPlanet;
     public float mediumPlanetTimer;
+    public float minMediumPlanetTimer;
     public GameObject hardPlanet;
     public float hardPlanetTimer;
+    public float minHardPlanetTimer;
 
     private IEnumerator coroutine1;
     private IEnumerator coroutine2;
@@ -106,12 +109,17 @@ public class GameController : MonoBehaviour {
         if(!worm.isDead())
             StartCoroutine(scoringLoop());
     }
+    
+    public void increaseScore(int increase)
+    {
+        score = score + increase;
+    }
 
     IEnumerator SpawnEasyPlanet()
     {
         while (true) { 
             spawnPlanets(easyPlanet);
-            if (easyPlanetTimer > 5.0)
+            if (easyPlanetTimer > minEasyPlanetTimer)
             {
                 easyPlanetTimer = easyPlanetTimer - 1;
             }
@@ -123,7 +131,7 @@ public class GameController : MonoBehaviour {
         while (true)
         {
             spawnPlanets(mediumPlanet);
-            if (mediumPlanetTimer > 5.0)
+            if (mediumPlanetTimer > minMediumPlanetTimer)
             {
                 mediumPlanetTimer = mediumPlanetTimer - 1;
             }
@@ -135,7 +143,7 @@ public class GameController : MonoBehaviour {
             while (true)
             {
                 spawnPlanets(hardPlanet);
-            if (hardPlanetTimer > 5.0)
+            if (hardPlanetTimer > minHardPlanetTimer)
             {
                 hardPlanetTimer = hardPlanetTimer - 1;
             }
