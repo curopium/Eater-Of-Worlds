@@ -11,6 +11,9 @@ public class GameController : MonoBehaviour {
     private Text scoreText;
     private Worm_Head worm;
     private GameObject gameOverPanel;
+    public List<GameObject> listOfPlanets;
+    public int maxPlanets;
+    private int planetCount;
 
     // Use this for initialization
     void Start () {
@@ -30,7 +33,6 @@ public class GameController : MonoBehaviour {
         // Update the GUI Score
         scoreText.text = "Score: " + score.ToString();
         // Check for player death
-        
         if (worm.isDead())
         {
             // Do game over stuff:
@@ -38,11 +40,34 @@ public class GameController : MonoBehaviour {
             GameObject.Find("CanvasPainter").GetComponent<Canvas>().planeDistance = 1;
             gameOverPanel.SetActive(true);
         }
+        else
+        {
+            RectTransform hp = GameObject.Find("TheyHunger").GetComponent<RectTransform>();
+            SpriteRenderer hpRend = GameObject.Find("TheyHunger").GetComponent<SpriteRenderer>();
+            hp.localScale = new Vector3(worm.hunger, 5, 0);
+            if (worm.hunger >= 50)
+                hpRend.color = Color.green;
+            else if (worm.hunger < 50 && worm.hunger >= 20)
+                hpRend.color = Color.yellow;
+            else
+                hpRend.color = Color.red;
+        }
 	}
 
     public void restartGame()
     {
         SceneManager.LoadScene("testland");
+    }
+
+    private void spawnPlanets()
+    {
+        if(maxPlanets > planetCount)
+        {
+            // yes hardcoded... Border object.edgeCollider2D 
+            float randY = Random.Range(-30, 30);
+            float randX = Random.Range(-40, 40);
+            //listOfPlanets;
+        }
     }
 
     private IEnumerator scoringLoop()
