@@ -15,8 +15,6 @@ public class Worm_Head : MonoBehaviour, Damagable {
     Vector3 prev_pos;
     Vector3 velocity;
     float current_turning_speed;
-    UnityEngine.UI.Slider hunger_slider;
-    UnityEngine.UI.Slider speed_slider;
     
 
     // Use this for initialization
@@ -24,12 +22,6 @@ public class Worm_Head : MonoBehaviour, Damagable {
         IAmDeceased = false;
         currentSpeed = 0f;
         prev_pos = transform.position;
-
-        GameObject slider = GameObject.Find("HungerSlider");
-        hunger_slider = slider.GetComponent<UnityEngine.UI.Slider>();
-
-        slider = GameObject.Find("SpeedSlider");
-        speed_slider = slider.GetComponent<UnityEngine.UI.Slider>();
     }
 
     public void detach()
@@ -42,7 +34,6 @@ public class Worm_Head : MonoBehaviour, Damagable {
         if (IAmDeceased) return;
 
         hunger -= Time.deltaTime;
-        hunger_slider.value = Mathf.Clamp(hunger / 100, 0, 1);
 
         // Player Control
         float v = Input.GetAxis("Vertical");
@@ -74,8 +65,6 @@ public class Worm_Head : MonoBehaviour, Damagable {
         velocity = (current_pos - prev_pos) / Time.deltaTime;
         //Debug.Log(velocity);
         current_turning_speed = Mathf.Abs(velocity.x) + Mathf.Abs(velocity.y);
-
-        speed_slider.value = Mathf.Clamp(current_turning_speed / maxSpeed, 0, 1);
 
         prev_pos = current_pos;
 
