@@ -6,10 +6,13 @@ Don't stand still as you grow more hungry and your health deteriorates.
 
 WASD or arrow keys to move (D or backarrow aren't used.)
 
+[Play WebGL version here!](https://curopium.github.io/Eater-Of-Worlds/)  
+(Might take a while to load)
+
 Programming: Thomas Curnow, Ryan Satyabrata
 Art: Ryan Satyabrata
 
 Used Bfxr for sound effects. http://www.bfxr.net/
 
-Used the music Pipe Choir Fortress Instrumental by Pipe Choir.
+Uses the music Pipe Choir Fortress Instrumental by Pipe Choir.
 http://freemusicarchive.org/music/Pipe_Choir/SGONS_Instrumentals/Pipe_Choir_Fortress_Instrumental
