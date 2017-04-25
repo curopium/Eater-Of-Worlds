@@ -97,6 +97,7 @@ public class Worm_Head : MonoBehaviour, Damagable {
         eaten_objects = +1;
         GameObject.Find("GameMaster").GetComponent<GameController>().increaseScore(25);
         hunger = hunger + food_value;
+        gameObject.GetComponent<AudioSource>().Play();
     }
 
     public void damage(float dmg)

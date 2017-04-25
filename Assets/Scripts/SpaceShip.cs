@@ -63,6 +63,7 @@ public class SpaceShip : MonoBehaviour {
     {
         GameObject clone = Instantiate(projectile, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
         clone.SetActive(true);
+        gameObject.GetComponent<AudioSource>().Play();
     }
 
 

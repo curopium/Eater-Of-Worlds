@@ -49,7 +49,8 @@ public class Planet : MonoBehaviour {
             GameObject clone = Instantiate(broken_piece, random_point, Quaternion.Euler(new Vector3(0, 0, Random.Range(-180, 180))));
             clone.SetActive(true);
         }
-        Destroy(gameObject);
+        gameObject.GetComponent<AudioSource>().Play();
+        Destroy(gameObject,0.5f);
     }
 
     void OnCollisionEnter2D(Collision2D col)

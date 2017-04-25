@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/mainMenu.unity
     guid: 4503a37bab2163f49b81d777e6252bed
   - enabled: 0
-    path: Assets/Scenes/ryanWorldTest.unity
+    path: Assets/__DELETED_GUID_Trash/db2a545d2ed40f946999c2ccbcaabd79
     guid: db2a545d2ed40f946999c2ccbcaabd79
   - enabled: 1
     path: Assets/Scenes/testland.unity
