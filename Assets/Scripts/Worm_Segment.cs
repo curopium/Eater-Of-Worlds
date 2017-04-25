@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Worm_Segment : MonoBehaviour
 {
-
+    public GameObject child;
     public GameObject parent;
     public bool tail;
 
@@ -17,7 +17,11 @@ public class Worm_Segment : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (parent == null) return;
+        if (parent == null)
+        {
+            transform.Rotate(Vector3.forward * 5 * Time.deltaTime);
+            return;
+        }
 
         //translation
         //http://answers.unity3d.com/questions/390009/3d-snake-classical-movement-1.html
@@ -29,7 +33,8 @@ public class Worm_Segment : MonoBehaviour
         if (!tail)
         {
             vector_From_Parent = vector_From_Parent.normalized * transform.localScale.y * 4;
-        } else
+        }
+        else
         {
             vector_From_Parent = vector_From_Parent.normalized * transform.localScale.y * 12;
         }
@@ -62,4 +67,14 @@ public class Worm_Segment : MonoBehaviour
             body.takeDamage(dam);
         }
     }
+
+    public void detach()
+    {
+        parent = null;
+        if (child != null)
+        {
+            child.GetComponent<Worm_Segment>().detach();
+        }
+    }
+
 }

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Worm_Head : MonoBehaviour, Damagable {
 
+    public GameObject child;
     public float acceleration;
+    bool IAmDeceased;
     public float turn_rate;
     public float maxSpeed;
     public float currentSpeed;
@@ -15,10 +17,12 @@ public class Worm_Head : MonoBehaviour, Damagable {
     float current_turning_speed;
     UnityEngine.UI.Slider hunger_slider;
     UnityEngine.UI.Slider speed_slider;
+    
 
     // Use this for initialization
     void Start () {
-		currentSpeed = 0f;
+        IAmDeceased = false;
+        currentSpeed = 0f;
         prev_pos = transform.position;
 
         GameObject slider = GameObject.Find("HungerSlider");
@@ -27,9 +31,15 @@ public class Worm_Head : MonoBehaviour, Damagable {
         slider = GameObject.Find("SpeedSlider");
         speed_slider = slider.GetComponent<UnityEngine.UI.Slider>();
     }
+
+    public void detach()
+    {
+        child.GetComponent<Worm_Segment>().detach();
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate() {
+        if (IAmDeceased) return;
 
         hunger -= Time.deltaTime;
         hunger_slider.value = Mathf.Clamp(hunger / 100, 0, 1);
@@ -90,6 +100,10 @@ public class Worm_Head : MonoBehaviour, Damagable {
     public bool isDead()
     {
         return hunger <= 0f;
+    }
+    public void die()
+    {
+        IAmDeceased = true;
     }
 
 }
