@@ -15,6 +15,17 @@ public class GameController : MonoBehaviour {
     public int maxPlanets;
     private int planetCount;
 
+    public GameObject easyPlanet;
+    public float easyPlanetTimer;
+    public GameObject mediumPlanet;
+    public float mediumPlanetTimer;
+    public GameObject hardPlanet;
+    public float hardPlanetTimer;
+
+    private IEnumerator coroutine1;
+    private IEnumerator coroutine2;
+    private IEnumerator coroutine3;
+
     // Use this for initialization
     void Start () {
         score = 0;
@@ -26,6 +37,16 @@ public class GameController : MonoBehaviour {
         // sprites are infront of the canvas stuff.
         GameObject.Find("CanvasPainter").GetComponent<Canvas>().planeDistance = 100;
         gameOverPanel.SetActive(false);
+
+
+        coroutine1 = SpawnEasyPlanet();
+        StartCoroutine(coroutine1);
+
+        coroutine2 = SpawnMediumPlanet();
+        StartCoroutine(coroutine2);
+
+        coroutine3 = SpawnHardPlanet();
+        StartCoroutine(coroutine3);
     }
 	
 	// Update is called once per frame
@@ -64,14 +85,15 @@ public class GameController : MonoBehaviour {
         SceneManager.LoadScene("testland");
     }
 
-    private void spawnPlanets()
+    private void spawnPlanets(GameObject planet)
     {
         if(maxPlanets > planetCount)
         {
             // yes hardcoded... Border object.edgeCollider2D 
             float randY = Random.Range(-30, 30);
             float randX = Random.Range(-40, 40);
-            //listOfPlanets;
+            GameObject clone = Instantiate(planet, new Vector3(randX,randY,planet.transform.position.z), planet.transform.rotation);
+            clone.SetActive(true);
         }
     }
 
@@ -83,5 +105,41 @@ public class GameController : MonoBehaviour {
         // and again.
         if(!worm.isDead())
             StartCoroutine(scoringLoop());
+    }
+
+    IEnumerator SpawnEasyPlanet()
+    {
+        while (true) { 
+            spawnPlanets(easyPlanet);
+            if (easyPlanetTimer > 5.0)
+            {
+                easyPlanetTimer = easyPlanetTimer - 1;
+            }
+            yield return new WaitForSeconds(easyPlanetTimer);
+        }
+    }
+    IEnumerator SpawnMediumPlanet()
+    {
+        while (true)
+        {
+            spawnPlanets(mediumPlanet);
+            if (mediumPlanetTimer > 5.0)
+            {
+                mediumPlanetTimer = mediumPlanetTimer - 1;
+            }
+            yield return new WaitForSeconds(mediumPlanetTimer);
+        }
+    }
+    IEnumerator SpawnHardPlanet()
+    {
+            while (true)
+            {
+                spawnPlanets(hardPlanet);
+            if (hardPlanetTimer > 5.0)
+            {
+                hardPlanetTimer = hardPlanetTimer - 1;
+            }
+            yield return new WaitForSeconds(hardPlanetTimer);
+            }
     }
 }

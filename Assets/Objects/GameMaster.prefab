@@ -51,3 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223d478d7f8f23b4582cc854755cc064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listOfPlanets: []
+  maxPlanets: 50
+  easyPlanet: {fileID: 0}
+  easyPlanetTimer: 10
+  mediumPlanet: {fileID: 0}
+  mediumPlanetTimer: 30
+  hardPlanet: {fileID: 0}
+  hardPlanetTimer: 60

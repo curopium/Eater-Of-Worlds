@@ -200,11 +200,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4503804159594900, guid: 3977d2729f4fef04baff5ba3d03c0c94, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 16.48
+      value: 11.11
       objectReference: {fileID: 0}
     - target: {fileID: 4503804159594900, guid: 3977d2729f4fef04baff5ba3d03c0c94, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.6
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 4503804159594900, guid: 3977d2729f4fef04baff5ba3d03c0c94, type: 2}
       propertyPath: m_LocalPosition.z
@@ -275,9 +275,18 @@ Prefab:
       propertyPath: broken_piece
       value: 
       objectReference: {fileID: 1358896511}
+    - target: {fileID: 1525776660496664, guid: 3977d2729f4fef04baff5ba3d03c0c94, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3977d2729f4fef04baff5ba3d03c0c94, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &313584785 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1525776660496664, guid: 3977d2729f4fef04baff5ba3d03c0c94,
+    type: 2}
+  m_PrefabInternal: {fileID: 313005906}
 --- !u!1 &381501584
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +442,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1211048534654572, guid: 820f8671a344b784db0386a2dca4341f,
     type: 2}
   m_PrefabInternal: {fileID: 958927950}
+--- !u!1 &438980329 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1506495240166380, guid: 1c2cdb0a506de4e44a12aa1b5d5b0469,
+    type: 2}
+  m_PrefabInternal: {fileID: 690818863}
 --- !u!1 &478826718
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +544,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4881680955935382, guid: 1c2cdb0a506de4e44a12aa1b5d5b0469, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.077643
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 4881680955935382, guid: 1c2cdb0a506de4e44a12aa1b5d5b0469, type: 2}
       propertyPath: m_LocalPosition.y
@@ -588,6 +602,10 @@ Prefab:
     - target: {fileID: 1506495240166380, guid: 1c2cdb0a506de4e44a12aa1b5d5b0469, type: 2}
       propertyPath: m_Name
       value: Easy Planet
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506495240166380, guid: 1c2cdb0a506de4e44a12aa1b5d5b0469, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c2cdb0a506de4e44a12aa1b5d5b0469, type: 2}
@@ -946,11 +964,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4902178955553942, guid: aa8db35ea113b874e8c58efef6afa5b0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 28.4
+      value: 18.9
       objectReference: {fileID: 0}
     - target: {fileID: 4902178955553942, guid: aa8db35ea113b874e8c58efef6afa5b0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.71
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4902178955553942, guid: aa8db35ea113b874e8c58efef6afa5b0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1061,6 +1079,10 @@ Prefab:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 1038533955}
+    - target: {fileID: 1946052917021136, guid: aa8db35ea113b874e8c58efef6afa5b0, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa8db35ea113b874e8c58efef6afa5b0, type: 2}
   m_IsPrefabParent: 0
@@ -1873,6 +1895,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 820f8671a344b784db0386a2dca4341f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2009266039 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1946052917021136, guid: aa8db35ea113b874e8c58efef6afa5b0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1073099951}
 --- !u!1001 &2028190057
 Prefab:
   m_ObjectHideFlags: 0
@@ -1912,6 +1939,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114423457724410492, guid: 5c82077e72da1bb409362dbfaaf05a98,
+        type: 2}
+      propertyPath: easyPlanet
+      value: 
+      objectReference: {fileID: 438980329}
+    - target: {fileID: 114423457724410492, guid: 5c82077e72da1bb409362dbfaaf05a98,
+        type: 2}
+      propertyPath: mediumPlanet
+      value: 
+      objectReference: {fileID: 313584785}
+    - target: {fileID: 114423457724410492, guid: 5c82077e72da1bb409362dbfaaf05a98,
+        type: 2}
+      propertyPath: hardPlanet
+      value: 
+      objectReference: {fileID: 2009266039}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c82077e72da1bb409362dbfaaf05a98, type: 2}
   m_IsPrefabParent: 0
