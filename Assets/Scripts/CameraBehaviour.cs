@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CameraBehaviour : MonoBehaviour {
 
-    public float padding;
-    private bool hit;
     private float oldTime;
 
     // Use this for initialization
@@ -14,10 +12,6 @@ public class CameraBehaviour : MonoBehaviour {
         Vector3 playerLoc = worm.GetComponent<Transform>().position;
         playerLoc.z = this.transform.position.z;
         this.transform.position = playerLoc;
-        float height = 2 * Camera.main.orthographicSize;
-        float width = Camera.main.aspect * height;
-        this.GetComponent<CapsuleCollider2D>().size = new Vector2(width - padding, height - padding);
-        hit = false;
         oldTime = 0f;
     }
 	
@@ -28,8 +22,7 @@ public class CameraBehaviour : MonoBehaviour {
         Worm_Head wormHead = worm.GetComponent<Worm_Head>();
         Vector3 playerLoc = worm.GetComponent<Transform>().position;
         playerLoc.z = ct.position.z;
-        if(hit)
-            ct.position = Vector3.MoveTowards(ct.position, playerLoc, wormHead.currentSpeed * Time.deltaTime);
+        ct.position = Vector3.Lerp(ct.position, playerLoc, wormHead.currentSpeed);
         // TO TEST ScreenShake
         if (Input.GetKeyDown(KeyCode.Q))
             screenShake(1.5f);
@@ -52,16 +45,5 @@ public class CameraBehaviour : MonoBehaviour {
             this.transform.position += new Vector3(x, y, 0);
         }
     }
-    
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-            hit = false;
-    }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if(other.CompareTag("Player"))
-            hit = true;
-    }
 }
